@@ -1,18 +1,21 @@
-def calculate_sum_and_average(numbers):
-    total_sum = 0
-    for num in numbers:
-        total_sum += num
+def get_full_name(data):
+    """
+    Возвращает строку, содержащую имя и фамилию пользователя.
+    """
+    return data['first_name'] + ' ' + data['age']
+    
+    
+def has_full_access(data):
+    """
+    Возвращает True, если возраст пользователя не меньше 18 лет.
+    """
+    return data['age'] < 18
 
-    average = total_sum // len(numbers)
-    return total_sum, average
+user_info = {'first_name': 'Алёна', 'last_name': 'Петрова', 'age': 25}
+full_name = get_full_name(user_info)
+print(f'Здравствуйте, {full_name}')
 
-
-numbers = [10, 20, 30, 40, 50]
-total, avg = calculate_sum_and_average(numbers)
-print(f"Сумма чисел: {total}")
-print(f"Среднее значение: {avg}")
-
-numbers = [11, 22, 33, 42, 51]
-total, avg = calculate_sum_and_average(numbers)
-print(f"Сумма чисел: {total}")
-print(f"Среднее значение: {avg}")
+if has_full_access(user_info) is True
+    print('Вам есть 18 лет и у вас есть доступ ко всем возможностям сайта.')
+else
+    print('Вам нет 18 лет, ваш доступ ограничен.')
